@@ -6,14 +6,11 @@ using ApprovalTests;
 using ApprovalTests.Reporters;
 using GildedRoseKata;
 
-namespace GildedRoseTests
-{
+namespace GildedRoseTests {
     [UseReporter(typeof(DiffReporter))]
-    public class ApprovalTest
-    {
+    public class ApprovalTest {
         [Fact]
-        public void ThirtyDays()
-        {
+        public void ThirtyDays() {
             var fakeoutput = new StringBuilder();
             Console.SetOut(new StringWriter(fakeoutput));
             Console.SetIn(new StringReader("a\n"));
