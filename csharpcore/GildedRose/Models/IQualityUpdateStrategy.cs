@@ -1,5 +1,5 @@
 ﻿namespace GildedRoseKata.Models {
     public interface IQualityUpdateStrategy {
-        void UpdateQuality(IItemData item);
+        void UpdateQuality(/* IItem */ Item item);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace GildedRoseKata {
+﻿namespace GildedRoseKata.Models {
     /// <summary>
     /// ATENÇÃO: Pertence ao Goblin!
     /// (Não alterar)

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GildedRoseKata.Enums;
+using GildedRoseKata.Models;
 
 namespace GildedRoseKata.Services {
-    class ILateQualityUpdateStrategyFactory {
+    public interface ILateQualityUpdateStrategyFactory {
+        ILateQualityUpdateStrategy CreateInstance(QualityUpdateStrategies qualityLimiterStrategy);
     }
 }
