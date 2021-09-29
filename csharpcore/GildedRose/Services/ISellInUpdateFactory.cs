@@ -2,7 +2,7 @@
 using GildedRoseKata.Models;
 
 namespace GildedRoseKata.Services {
-    public interface ISellInUpdateStrategyFactory {
+    public interface ISellInUpdateFactory {
         ISellInUpdateStrategy CreateInstance(SellInUpdateStrategies sellInUpdateStrategy);
     }
 }

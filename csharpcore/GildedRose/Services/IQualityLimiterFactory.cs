@@ -2,7 +2,7 @@
 using GildedRoseKata.Models;
 
 namespace GildedRoseKata.Services {
-    public interface IQualityLimiterStrategyFactory {
+    public interface IQualityLimiterFactory {
         IQualityLimiterStrategy CreateInstance(QualityLimiterStrategies qualityLimiterStrategy);
     }
 }
