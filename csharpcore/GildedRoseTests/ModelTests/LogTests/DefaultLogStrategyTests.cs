@@ -2,6 +2,7 @@
 using GildedRoseKata.Models;
 using GildedRoseKata.Models.Logs;
 using GildedRoseTests.Helpers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -44,12 +45,12 @@ namespace GildedRoseTests.ModelTests.LogTests {
             }
             string result = builder.ToString();
             string expectedResult =
-                  "              GildedRose              \r\n"
-                + "| day | name      | sellIn | quality |\r\n"
-                + "|-----|-----------|--------|---------|\r\n"
-                + "|   3 | foo       |      0 |       0 |\r\n"
-                + "|   3 | item-name |      7 |      16 |\r\n"
-                + "\r\n";
+                  $"              GildedRose              {Environment.NewLine}"
+                + $"| day | name      | sellIn | quality |{Environment.NewLine}"
+                + $"|-----|-----------|--------|---------|{Environment.NewLine}"
+                + $"|   3 | foo       |      0 |       0 |{Environment.NewLine}"
+                + $"|   3 | item-name |      7 |      16 |{Environment.NewLine}"
+                + Environment.NewLine;
             Assert.Equal(expectedResult, result);
         }
 

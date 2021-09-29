@@ -6,7 +6,7 @@ using System.IO;
 
 namespace GildedRoseKata.Data {
     public class JsonDataSource : IDataSource {
-        private const string DefaultItemsFilePath = "data/items.json";
+        private const string DefaultItemsFilePath = "Data/items.json";
 
         private readonly string itemsFilePath;
         private bool isLoaded = false;
