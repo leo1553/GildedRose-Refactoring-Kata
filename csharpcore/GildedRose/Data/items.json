@@ -1,0 +1,74 @@
+[
+  {
+    "name": "+5 Dexterity Vest",
+    "quality": 20,
+    "sellIn": 10,
+    "qualityLimiterStrategy": "Default",
+    "qualityUpdateStrategy": "Noop",
+    "sellInUpdateStrategy": "Decrease"
+  },
+  {
+    "name": "Aged Brie",
+    "quality": 0,
+    "sellIn": 2,
+    "qualityLimiterStrategy": "Default",
+    "qualityUpdateStrategy": "Increase",
+    "sellInUpdateStrategy": "Decrease"
+  },
+  {
+    "name": "Elixir of the Mongoose",
+    "quality": 7,
+    "sellIn": 5,
+    "qualityLimiterStrategy": "Default",
+    "qualityUpdateStrategy": "Noop",
+    "sellInUpdateStrategy": "Decrease"
+  },
+  {
+    "name": "Sulfuras, Hand of Ragnaros",
+    "quality": 80,
+    "sellIn": 0,
+    "qualityLimiterStrategy": "Legendary",
+    "qualityUpdateStrategy": "Noop",
+    "sellInUpdateStrategy": "Noop"
+  },
+  {
+    "name": "Sulfuras, Hand of Ragnaros",
+    "quality": 80,
+    "sellIn": -1,
+    "qualityLimiterStrategy": "Legendary",
+    "qualityUpdateStrategy": "Noop",
+    "sellInUpdateStrategy": "Noop"
+  },
+  {
+    "name": "Backstage passes to a TAFKAL80ETC concert",
+    "quality": 20,
+    "sellIn": 15,
+    "qualityLimiterStrategy": "Default",
+    "qualityUpdateStrategy": "Hype",
+    "sellInUpdateStrategy": "Decrease"
+  },
+  {
+    "name": "Backstage passes to a TAFKAL80ETC concert",
+    "quality": 49,
+    "sellIn": 10,
+    "qualityLimiterStrategy": "Default",
+    "qualityUpdateStrategy": "Hype",
+    "sellInUpdateStrategy": "Decrease"
+  },
+  {
+    "name": "Backstage passes to a TAFKAL80ETC concert",
+    "quality": 49,
+    "sellIn": 5,
+    "qualityLimiterStrategy": "Default",
+    "qualityUpdateStrategy": "Hype",
+    "sellInUpdateStrategy": "Decrease"
+  },
+  {
+    "name": "Conjured Mana Cake",
+    "quality": 6,
+    "sellIn": 3,
+    "qualityLimiterStrategy": "Default",
+    "qualityUpdateStrategy": "Noop",
+    "sellInUpdateStrategy": "Decrease"
+  }
+]
