@@ -2,17 +2,24 @@
 using GildedRoseKata.Data;
 using GildedRoseKata.Models;
 using GildedRoseKata.Services;
+using GildedRoseKata.Utils;
 using System;
 
 namespace GildedRoseKata {
     public class Program {
+        private IProgramOptions Options { get; set; }
         private IContainer Container { get; set; }
         private GildedRose GildedRose { get; set; }
 
-        public static void Main(string[] args) => new Program(args).Run();
+        public static void Main(string[] args) {
+            IProgramOptions options = ParameterParser.GetOptions(args);
+            Program program = new Program(options);
+            program.Run();
+        }
 
-        public Program(string[] args) {
+        public Program(IProgramOptions options) {
             Console.WriteLine("OMGHAI!");
+            this.Options = options;
             this.BuildContainer();
         }
 
@@ -49,7 +56,7 @@ namespace GildedRoseKata {
         }
 
         private void Log() {
-            for(var i = 0; i < 31; i++) {
+            for(var i = 0; i <= this.Options.DaysToSimulate; i++) {
                 Console.WriteLine("-------- day " + i + " --------");
                 Console.WriteLine("name, sellIn, quality");
                 foreach(Item item in this.GildedRose.ItemDatas.Keys) {
