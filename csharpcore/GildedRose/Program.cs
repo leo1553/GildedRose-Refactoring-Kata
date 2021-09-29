@@ -3,27 +3,23 @@ using GildedRoseKata.Data;
 using GildedRoseKata.Models;
 using GildedRoseKata.Services;
 using GildedRoseKata.Utils;
-using System;
 
 namespace GildedRoseKata {
-    public class Program {
-        private IProgramOptions Options { get; set; }
-        private IContainer Container { get; set; }
-        private GildedRose GildedRose { get; set; }
+    public static class Program {
+        private static IProgramOptions Options { get; set; }
+        private static IContainer Container { get; set; }
 
         public static void Main(string[] args) {
-            IProgramOptions options = ParameterParser.GetOptions(args);
-            Program program = new Program(options);
-            program.Run();
+            Program.GetOptions(args);
+            Program.BuildContainer();
+            Program.Run();
         }
 
-        public Program(IProgramOptions options) {
-            Console.WriteLine("OMGHAI!");
-            this.Options = options;
-            this.BuildContainer();
+        private static void GetOptions(string[] args) {
+            Program.Options = ParameterParser.GetOptions(args);
         }
 
-        private void BuildContainer() {
+        private static void BuildContainer() {
             ContainerBuilder containerBuilder = new ContainerBuilder();
             // Dados
             containerBuilder.RegisterType<JsonDataSource>()
@@ -44,27 +40,20 @@ namespace GildedRoseKata {
             containerBuilder.RegisterType<SellInUpdateFactory>()
                             .As<ISellInUpdateFactory>()
                             .SingleInstance();
+            containerBuilder.RegisterType<LogFactory>()
+                            .As<ILogFactory>()
+                            .SingleInstance();
             // App
+            containerBuilder.RegisterType<Startup>();
             containerBuilder.RegisterType<GildedRose>();
 
-            this.Container = containerBuilder.Build();
+            Program.Container = containerBuilder.Build();
         }
 
-        private void Run() {
-            this.GildedRose = this.Container.Resolve<GildedRose>();
-            this.Log();
-        }
-
-        private void Log() {
-            for(var i = 0; i <= this.Options.DaysToSimulate; i++) {
-                Console.WriteLine("-------- day " + i + " --------");
-                Console.WriteLine("name, sellIn, quality");
-                foreach(Item item in this.GildedRose.ItemDatas.Keys) {
-                    Console.WriteLine(item.Name + ", " + item.SellIn + ", " + item.Quality);
-                }
-                Console.WriteLine("");
-                this.GildedRose.UpdateQuality();
-            }
+        private static void Run() {
+            Startup startup = Program.Container.Resolve<Startup>();
+            startup.Prepare(Program.Options);
+            startup.Run();
         }
     }
 }

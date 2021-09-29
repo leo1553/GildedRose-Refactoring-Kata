@@ -11,14 +11,17 @@ namespace GildedRoseTests {
     public class ApprovalTest {
         [Fact]
         public void ThirtyDays() {
-            var fakeoutput = new StringBuilder();
-            Console.SetOut(new StringWriter(fakeoutput));
-            Console.SetIn(new StringReader("a\n"));
+            // Como os testes são processados em paralelo, é necessário garantir
+            // a segurança desta condição de corrida, senão o teste falhará
+            lock(Console.Out) {
+                var stringBuilder = new StringBuilder();
+                Console.SetOut(new StringWriter(stringBuilder));
 
-            Program.Main(new string[] { });
-            var output = fakeoutput.ToString();
+                Program.Main(new string[] { "--log=Legacy" });
+                var consoleOutput = stringBuilder.ToString();
 
-            Approvals.Verify(output);
+                Approvals.Verify(consoleOutput);
+            }
         }
     }
 }

@@ -36,7 +36,7 @@ namespace GildedRoseKata.Utils {
             }
             catch(OptionException e) {
                 Console.Error.WriteLine(e.Message);
-                Console.Error.WriteLine($"Try {AppDomain.CurrentDomain.FriendlyName} --help for more information.");
+                Console.Error.WriteLine($"Try {AppDomain.CurrentDomain.FriendlyName}.exe --help for more information.");
                 Environment.Exit(-1);
             }
             return programOptions;
@@ -57,7 +57,7 @@ namespace GildedRoseKata.Utils {
         }
 
         private static void DisplayLog(OptionSet options) {
-            Console.WriteLine($"Usage: {AppDomain.CurrentDomain.FriendlyName} [options]+");
+            Console.WriteLine($"Usage: {AppDomain.CurrentDomain.FriendlyName}.exe [options]+");
             Console.WriteLine("Options:");
             options.WriteOptionDescriptions(Console.Out);
             Console.WriteLine("Log strategies:");
