@@ -1,6 +1,9 @@
-﻿using System;
+﻿using GildedRoseKata.Enums;
+using GildedRoseKata.Utils;
+using System;
 
 namespace GildedRoseKata.Models.QualityUpdaters {
+    [RegisterStrategy(For = QualityUpdateStrategies.Hype)]
     public class HypeQualityUpdateStrategy : IQualityUpdateStrategy {
         /// <summary>
         /// Aumenta <paramref name="item"/>.Quality de acordo com <paramref name="item"/>.SellIn:<br/>

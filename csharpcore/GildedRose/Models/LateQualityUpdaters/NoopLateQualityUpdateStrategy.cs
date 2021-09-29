@@ -1,6 +1,9 @@
-﻿using System;
+﻿using GildedRoseKata.Enums;
+using GildedRoseKata.Utils;
+using System;
 
 namespace GildedRoseKata.Models.LateQualityUpdaters {
+    [RegisterStrategy(For = QualityUpdateStrategies.Noop)]
     public class NoopLateQualityUpdateStrategy : ILateQualityUpdateStrategy {
         /// <summary>
         /// Nada acontece.

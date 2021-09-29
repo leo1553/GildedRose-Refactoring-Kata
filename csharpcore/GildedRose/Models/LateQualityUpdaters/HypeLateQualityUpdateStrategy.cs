@@ -1,6 +1,9 @@
-﻿using System;
+﻿using GildedRoseKata.Enums;
+using GildedRoseKata.Utils;
+using System;
 
 namespace GildedRoseKata.Models.LateQualityUpdaters {
+    [RegisterStrategy(For = QualityUpdateStrategies.Hype)]
     public class HypeLateQualityUpdateStrategy : ILateQualityUpdateStrategy {
         /// <summary>
         /// Caso o tempo de venda tenha expirado, definir <paramref name="item"/>.Quality para zero.

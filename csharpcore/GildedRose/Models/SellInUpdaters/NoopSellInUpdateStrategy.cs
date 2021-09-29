@@ -1,6 +1,9 @@
-﻿using System;
+﻿using GildedRoseKata.Enums;
+using GildedRoseKata.Utils;
+using System;
 
 namespace GildedRoseKata.Models.SellInUpdaters {
+    [RegisterStrategy(For = SellInUpdateStrategies.Noop)]
     public class NoopSellInUpdateStrategy : ISellInUpdateStrategy {
         /// <summary>
         /// Nada acontece.

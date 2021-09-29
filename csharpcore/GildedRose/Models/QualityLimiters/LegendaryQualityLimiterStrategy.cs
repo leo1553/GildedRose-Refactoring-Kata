@@ -1,4 +1,8 @@
-﻿namespace GildedRoseKata.Models.QualityLimiters {
+﻿using GildedRoseKata.Enums;
+using GildedRoseKata.Utils;
+
+namespace GildedRoseKata.Models.QualityLimiters {
+    [RegisterStrategy(For = QualityLimiterStrategies.Legendary)]
     public class LegendaryQualityLimiterStrategy : IQualityLimiterStrategy {
         /// <summary>
         /// Itens lendarios tem sua qualidade em 80.

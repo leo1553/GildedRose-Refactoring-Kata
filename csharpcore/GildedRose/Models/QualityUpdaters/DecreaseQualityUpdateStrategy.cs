@@ -1,6 +1,9 @@
-﻿using System;
+﻿using GildedRoseKata.Enums;
+using GildedRoseKata.Utils;
+using System;
 
 namespace GildedRoseKata.Models.QualityUpdaters {
+    [RegisterStrategy(For = QualityUpdateStrategies.Decrease)]
     public class DecreaseQualityUpdateStrategy : IQualityUpdateStrategy {
         protected int Multiplier { get; set; } = 1;
 

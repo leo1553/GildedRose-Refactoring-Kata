@@ -1,4 +1,8 @@
-﻿namespace GildedRoseKata.Models.QualityLimiters {
+﻿using GildedRoseKata.Enums;
+using GildedRoseKata.Utils;
+
+namespace GildedRoseKata.Models.QualityLimiters {
+    [RegisterStrategy(For = QualityLimiterStrategies.Default)]
     public class DefaultQualityLimiterStrategy : IQualityLimiterStrategy {
         /// <summary>
         /// Limita o valor de <paramref name="quality"/> entre 0 e 50.
