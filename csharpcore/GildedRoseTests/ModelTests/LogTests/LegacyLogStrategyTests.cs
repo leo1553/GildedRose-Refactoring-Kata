@@ -2,6 +2,7 @@
 using GildedRoseKata.Models;
 using GildedRoseKata.Models.Logs;
 using GildedRoseTests.Helpers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -29,7 +30,7 @@ namespace GildedRoseTests.ModelTests.LogTests {
                 legacyLogStrategy.Begin(writer);
             }
             string result = builder.ToString();
-            Assert.Equal("OMGHAI!\r\n", result);
+            Assert.Equal($"OMGHAI!{Environment.NewLine}", result);
         }
 
         [Fact]
@@ -53,11 +54,11 @@ namespace GildedRoseTests.ModelTests.LogTests {
             }
             string result = builder.ToString();
             string expectedResult =
-                  "-------- day 2 --------\r\n"
-                + "name, sellIn, quality\r\n"
-                + "foo, 0, 0\r\n"
-                + "item-name, 7, 16\r\n"
-                + "\r\n";
+                  $"-------- day 2 --------{Environment.NewLine}"
+                + $"name, sellIn, quality{Environment.NewLine}"
+                + $"foo, 0, 0{Environment.NewLine}"
+                + $"item-name, 7, 16{Environment.NewLine}"
+                + Environment.NewLine;
             Assert.Equal(expectedResult, result);
         }
     }

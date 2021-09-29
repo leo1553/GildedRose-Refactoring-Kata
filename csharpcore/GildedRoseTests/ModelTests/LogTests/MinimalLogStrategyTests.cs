@@ -2,6 +2,7 @@
 using GildedRoseKata.Models;
 using GildedRoseKata.Models.Logs;
 using GildedRoseTests.Helpers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -53,9 +54,9 @@ namespace GildedRoseTests.ModelTests.LogTests {
             }
             string result = builder.ToString();
             string expectedResult =
-                  "1\r\n"
-                + "\"foo\" 0 0\r\n"
-                + "\"item-name\" 7 16\r\n";
+                  $"1{Environment.NewLine}"
+                + $"\"foo\" 0 0{Environment.NewLine}"
+                + $"\"item-name\" 7 16{Environment.NewLine}";
             Assert.Equal(expectedResult, result);
         }
     }

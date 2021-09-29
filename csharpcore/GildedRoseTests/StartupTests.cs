@@ -30,12 +30,12 @@ namespace GildedRoseTests {
                 startup.Run();
                 string consoleOutput = stringBuilder.ToString();
                 string expectedOutput =
-                      "Begin\r\n"
-                    + "Log Day 0\r\n"
-                    + "Log Day 1\r\n"
-                    + "Log Day 2\r\n"
-                    + "Log Day 3\r\n"
-                    + "Finish\r\n";
+                      $"Begin{Environment.NewLine}"
+                    + $"Log Day 0{Environment.NewLine}"
+                    + $"Log Day 1{Environment.NewLine}"
+                    + $"Log Day 2{Environment.NewLine}"
+                    + $"Log Day 3{Environment.NewLine}"
+                    + $"Finish{Environment.NewLine}";
                 Assert.Equal(expectedOutput, consoleOutput);
             }
         }
