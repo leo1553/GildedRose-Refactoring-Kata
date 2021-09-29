@@ -4,7 +4,7 @@
     "quality": 20,
     "sellIn": 10,
     "qualityLimiterStrategy": "Default",
-    "qualityUpdateStrategy": "Noop",
+    "qualityUpdateStrategy": "Decrease",
     "sellInUpdateStrategy": "Decrease"
   },
   {
@@ -20,7 +20,7 @@
     "quality": 7,
     "sellIn": 5,
     "qualityLimiterStrategy": "Default",
-    "qualityUpdateStrategy": "Noop",
+    "qualityUpdateStrategy": "Decrease",
     "sellInUpdateStrategy": "Decrease"
   },
   {
@@ -68,7 +68,7 @@
     "quality": 6,
     "sellIn": 3,
     "qualityLimiterStrategy": "Default",
-    "qualityUpdateStrategy": "Noop",
+    "qualityUpdateStrategy": "Conjured",
     "sellInUpdateStrategy": "Decrease"
   }
 ]

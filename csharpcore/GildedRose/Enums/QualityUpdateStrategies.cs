@@ -3,6 +3,7 @@
         Noop = 0,
         Decrease,
         Increase,
-        Hype
+        Hype,
+        Conjured
     }
 }

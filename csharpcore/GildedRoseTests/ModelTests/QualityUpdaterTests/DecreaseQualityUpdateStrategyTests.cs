@@ -15,12 +15,12 @@ namespace GildedRoseTests.ModelTests.QualityUpdaterTests {
         }
 
         /// <summary>
-        /// DADO    que item.SellIn seja maior ou igual a zero
+        /// DADO    que item.SellIn seja maior que zero
         /// QUANDO  <see cref="DecreaseQualityUpdateStrategy.UpdateQuality(Item)"/> for chamado
         /// ENTÃO   item.Quality deve ser reduzido em um.
         /// </summary>
         [Theory]
-        [InlineData(0, 0,  -1)]
+        [InlineData(1, 0,  -1)]
         [InlineData(3, 1,   0)]
         [InlineData(7, 2,   1)]
         [InlineData(9, 50, 49)]
@@ -34,6 +34,7 @@ namespace GildedRoseTests.ModelTests.QualityUpdaterTests {
         /// ENTÃO   item.Quality deve ser reduzido em dois.
         /// </summary>
         [Theory]
+        [InlineData(0,   0, -2)]
         [InlineData(-1,  0, -2)]
         [InlineData(-3,  1, -1)]
         [InlineData(-7,  2,  0)]
