@@ -13,7 +13,7 @@ namespace GildedRoseTests {
         public void ThirtyDays() {
             // Como os testes são processados em paralelo, é necessário garantir
             // a segurança desta condição de corrida, senão o teste falhará
-            lock(Console.Out) {
+            lock(Console.In) {
                 var stringBuilder = new StringBuilder();
                 Console.SetOut(new StringWriter(stringBuilder));
 

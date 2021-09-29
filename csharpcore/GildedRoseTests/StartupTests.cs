@@ -23,7 +23,7 @@ namespace GildedRoseTests {
         public void Run_ValidarSaida() {
             // Como os testes são processados em paralelo, é necessário garantir
             // a segurança desta condição de corrida, senão o teste falhará
-            lock(Console.Out) {
+            lock(Console.In) {
                 StringBuilder stringBuilder = new StringBuilder();
                 Console.SetOut(new StringWriter(stringBuilder));
                 Startup startup = this.GetStartup();
