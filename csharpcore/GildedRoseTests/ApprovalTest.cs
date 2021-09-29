@@ -17,7 +17,7 @@ namespace GildedRoseTests {
                 var stringBuilder = new StringBuilder();
                 Console.SetOut(new StringWriter(stringBuilder));
 
-                Program.Main(new string[] { "--log=Legacy" });
+                Program.Main(new string[] { "--log=minimal" });
                 var consoleOutput = stringBuilder.ToString();
 
                 Approvals.Verify(consoleOutput);
